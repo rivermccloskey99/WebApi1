@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webapi1-depl
+spec:
+  replicas: 0
+  selector:
+    matchLabels:
+      app: webapi1
+  template:
+    metadata:
+      labels:
+        app: webapi1
+    spec:
+      containers:
+      - name: webapi1
+        image: rivermccloskey498/webapi1
