@@ -2201,11 +2201,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\rmccloskey004\\source\\repos\\WebApi1\\WebApi1.csproj",
+      "projectUniqueName": "C:\\Users\\rmccloskey004\\source\\repos\\APIDemo\\WebApi1\\WebApi1.csproj",
       "projectName": "WebApi1",
-      "projectPath": "C:\\Users\\rmccloskey004\\source\\repos\\WebApi1\\WebApi1.csproj",
+      "projectPath": "C:\\Users\\rmccloskey004\\source\\repos\\APIDemo\\WebApi1\\WebApi1.csproj",
       "packagesPath": "C:\\Users\\rmccloskey004\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\rmccloskey004\\source\\repos\\WebApi1\\obj\\",
+      "outputPath": "C:\\Users\\rmccloskey004\\source\\repos\\APIDemo\\WebApi1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\rmccloskey004\\AppData\\Roaming\\NuGet\\NuGet.Config",
