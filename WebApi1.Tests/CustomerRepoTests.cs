@@ -67,6 +67,39 @@ namespace WebApi1.Tests
             Assert.Throws<ArgumentNullException>(() => repo.DeleteCustomerById(0));
         }
 
+        [Fact]
+        public void Get_all_customers()
+        {
+            // Arrange
+            var repo = new CustomerRepo(_context);
+
+            // Act
+            var customerCount = repo.GetAllCustomers().Count();
+
+            // Assert
+            Assert.Equal(2, customerCount);
+        }
+
+        [Fact]
+        public void Get_customer_by_id()
+        {
+            // Arrange
+            var repo = new CustomerRepo(_context);
+            var expectedCustomer = new Customer() { FirstName = "River", LastName = "McCloskey", AccountNumber = 123, SortCode = "456-789", PostCode = "BT74 637", Balance = 6700000.43M };
+
+            // Act
+            var customer = repo.GetCustomerById(1);
+
+            // Assert
+            Assert.Equal(expectedCustomer.FirstName, customer.FirstName);
+            Assert.Equal(expectedCustomer.LastName, customer.LastName);
+            Assert.Equal(expectedCustomer.AccountNumber, customer.AccountNumber);
+            Assert.Equal(expectedCustomer.SortCode, customer.SortCode);
+            Assert.Equal(expectedCustomer.PostCode, customer.PostCode);
+            Assert.Equal(expectedCustomer.Balance, customer.Balance);
+        }
+
+
         public void Dispose()
         {
             _context.Database.EnsureDeleted();
