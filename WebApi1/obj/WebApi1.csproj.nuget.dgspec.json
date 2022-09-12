@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Projects\\DPT\\WebApi1\\WebApi1\\WebApi1.csproj": {}
+    "C:\\Users\\rmccloskey004\\source\\repos\\APIDemo\\WebApi1\\WebApi1.csproj": {}
   },
   "projects": {
-    "C:\\Projects\\DPT\\WebApi1\\WebApi1\\WebApi1.csproj": {
+    "C:\\Users\\rmccloskey004\\source\\repos\\APIDemo\\WebApi1\\WebApi1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projects\\DPT\\WebApi1\\WebApi1\\WebApi1.csproj",
+        "projectUniqueName": "C:\\Users\\rmccloskey004\\source\\repos\\APIDemo\\WebApi1\\WebApi1.csproj",
         "projectName": "WebApi1",
-        "projectPath": "C:\\Projects\\DPT\\WebApi1\\WebApi1\\WebApi1.csproj",
-        "packagesPath": "C:\\Users\\rmcgrath013\\.nuget\\packages\\",
-        "outputPath": "C:\\Projects\\DPT\\WebApi1\\WebApi1\\obj\\",
+        "projectPath": "C:\\Users\\rmccloskey004\\source\\repos\\APIDemo\\WebApi1\\WebApi1.csproj",
+        "packagesPath": "C:\\Users\\rmccloskey004\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\rmccloskey004\\source\\repos\\APIDemo\\WebApi1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\rmcgrath013\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\rmccloskey004\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Projects\\DPT\\Local-NuGets": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -90,7 +89,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.303\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

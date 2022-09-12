@@ -58,6 +58,17 @@ namespace WebApi1.Tests
         }
 
         [Fact]
+        public void Delete_an_existing_customer()
+        {
+            // Arrange
+
+            // Act
+
+            // Assert
+
+        }
+
+        [Fact]
         public void Delete_a_non_existing_customer_and_throw_exception()
         {
             // Arrange
@@ -81,7 +92,7 @@ namespace WebApi1.Tests
         }
 
         [Fact]
-        public void Get_customer_by_id()
+        public void Get_a_customer_by_valid_id_and_return_the_customer()
         {
             // Arrange
             var repo = new CustomerRepo(_context);
@@ -97,6 +108,17 @@ namespace WebApi1.Tests
             Assert.Equal(expectedCustomer.SortCode, customer.SortCode);
             Assert.Equal(expectedCustomer.PostCode, customer.PostCode);
             Assert.Equal(expectedCustomer.Balance, customer.Balance);
+        }
+
+        [Fact]
+        public void Get_a_customer_by_invalid_id_and_throw_an_exception()
+        {
+            // Arrange
+
+            // Act
+
+            // Assert
+
         }
 
 
