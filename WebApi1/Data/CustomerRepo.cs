@@ -22,11 +22,20 @@ namespace WebApi1.Data
 
         public IEnumerable<Customer> GetAllCustomers()
         {
+            var customerCount = _context.Customers.Any();
+            if (customerCount == false) 
+                throw new ArgumentNullException("No customers in database");
+
             return _context.Customers.ToList();
         }
 
         public Customer GetCustomerById(int id)
         {
+            var customerToGet = _context.Customers.Find(id);
+
+            if (customerToGet == null)
+                throw new ArgumentNullException(nameof(customerToGet));
+
             return _context.Customers.FirstOrDefault(c => c.Id == id);
         }
 

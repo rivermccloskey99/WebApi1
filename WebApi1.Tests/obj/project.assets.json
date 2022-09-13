@@ -45,6 +45,18 @@
           "build/netstandard1.0/coverlet.collector.targets": {}
         }
       },
+      "FluentAssertions/6.7.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Configuration.ConfigurationManager": "4.4.0"
+        },
+        "compile": {
+          "lib/net6.0/FluentAssertions.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/FluentAssertions.dll": {}
+        }
+      },
       "Microsoft.CodeCoverage/17.3.1": {
         "type": "package",
         "compile": {
@@ -1157,7 +1169,7 @@
           "System.Security.Permissions": "4.7.0"
         },
         "compile": {
-          "ref/netstandard2.0/_._": {}
+          "ref/netstandard2.0/System.Configuration.ConfigurationManager.dll": {}
         },
         "runtime": {
           "lib/netstandard2.0/System.Configuration.ConfigurationManager.dll": {}
@@ -1834,7 +1846,7 @@
           "System.Security.Principal.Windows": "4.7.0"
         },
         "compile": {
-          "ref/netstandard2.0/_._": {}
+          "ref/netstandard2.0/System.Security.AccessControl.dll": {}
         },
         "runtime": {
           "lib/netstandard2.0/System.Security.AccessControl.dll": {}
@@ -2071,7 +2083,7 @@
           "System.Windows.Extensions": "4.7.0"
         },
         "compile": {
-          "ref/netcoreapp3.0/_._": {}
+          "ref/netcoreapp3.0/System.Security.Permissions.dll": {}
         },
         "runtime": {
           "lib/netcoreapp3.0/System.Security.Permissions.dll": {}
@@ -2080,7 +2092,7 @@
       "System.Security.Principal.Windows/4.7.0": {
         "type": "package",
         "compile": {
-          "ref/netcoreapp3.0/_._": {}
+          "ref/netcoreapp3.0/System.Security.Principal.Windows.dll": {}
         },
         "runtime": {
           "lib/netstandard2.0/System.Security.Principal.Windows.dll": {}
@@ -2204,7 +2216,7 @@
           "System.Drawing.Common": "4.7.0"
         },
         "compile": {
-          "ref/netcoreapp3.0/_._": {}
+          "ref/netcoreapp3.0/System.Windows.Extensions.dll": {}
         },
         "runtime": {
           "lib/netcoreapp3.0/System.Windows.Extensions.dll": {}
@@ -2476,6 +2488,36 @@
         "coverlet-icon.png",
         "coverlet.collector.3.1.2.nupkg.sha512",
         "coverlet.collector.nuspec"
+      ]
+    },
+    "FluentAssertions/6.7.0": {
+      "sha512": "PWbow/R3MnYDP8UW7zh/w80rGb+1NufGoNJeuzouTo2bqpvwNTFxbDwF6XWfFZ5IuquL2225Um+qSyZ8jVsT+w==",
+      "type": "package",
+      "path": "fluentassertions/6.7.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "FluentAssertions.png",
+        "fluentassertions.6.7.0.nupkg.sha512",
+        "fluentassertions.nuspec",
+        "lib/net47/FluentAssertions.dll",
+        "lib/net47/FluentAssertions.pdb",
+        "lib/net47/FluentAssertions.xml",
+        "lib/net6.0/FluentAssertions.dll",
+        "lib/net6.0/FluentAssertions.pdb",
+        "lib/net6.0/FluentAssertions.xml",
+        "lib/netcoreapp2.1/FluentAssertions.dll",
+        "lib/netcoreapp2.1/FluentAssertions.pdb",
+        "lib/netcoreapp2.1/FluentAssertions.xml",
+        "lib/netcoreapp3.0/FluentAssertions.dll",
+        "lib/netcoreapp3.0/FluentAssertions.pdb",
+        "lib/netcoreapp3.0/FluentAssertions.xml",
+        "lib/netstandard2.0/FluentAssertions.dll",
+        "lib/netstandard2.0/FluentAssertions.pdb",
+        "lib/netstandard2.0/FluentAssertions.xml",
+        "lib/netstandard2.1/FluentAssertions.dll",
+        "lib/netstandard2.1/FluentAssertions.pdb",
+        "lib/netstandard2.1/FluentAssertions.xml"
       ]
     },
     "Microsoft.CodeCoverage/17.3.1": {
@@ -8037,6 +8079,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "FluentAssertions >= 6.7.0",
       "Microsoft.NET.Test.Sdk >= 17.3.1",
       "Moq >= 4.18.2",
       "WebApi1 >= 1.0.0",
@@ -8046,19 +8089,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\rmccloskey004\\.nuget\\packages\\": {}
+    "C:\\Users\\rmcgrath013\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\rmccloskey004\\source\\repos\\APIDemo\\WebApi1.Tests\\WebApi1.Tests.csproj",
+      "projectUniqueName": "C:\\Projects\\DPT\\WebApi1\\WebApi1.Tests\\WebApi1.Tests.csproj",
       "projectName": "WebApi1.Tests",
-      "projectPath": "C:\\Users\\rmccloskey004\\source\\repos\\APIDemo\\WebApi1.Tests\\WebApi1.Tests.csproj",
-      "packagesPath": "C:\\Users\\rmccloskey004\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\rmccloskey004\\source\\repos\\APIDemo\\WebApi1.Tests\\obj\\",
+      "projectPath": "C:\\Projects\\DPT\\WebApi1\\WebApi1.Tests\\WebApi1.Tests.csproj",
+      "packagesPath": "C:\\Users\\rmcgrath013\\.nuget\\packages\\",
+      "outputPath": "C:\\Projects\\DPT\\WebApi1\\WebApi1.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\rmccloskey004\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\rmcgrath013\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -8066,14 +8109,15 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Projects\\DPT\\Local-NuGets": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\rmccloskey004\\source\\repos\\APIDemo\\WebApi1\\WebApi1.csproj": {
-              "projectPath": "C:\\Users\\rmccloskey004\\source\\repos\\APIDemo\\WebApi1\\WebApi1.csproj"
+            "C:\\Projects\\DPT\\WebApi1\\WebApi1\\WebApi1.csproj": {
+              "projectPath": "C:\\Projects\\DPT\\WebApi1\\WebApi1\\WebApi1.csproj"
             }
           }
         }
@@ -8088,6 +8132,10 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
+          "FluentAssertions": {
+            "target": "Package",
+            "version": "[6.7.0, )"
+          },
           "Microsoft.NET.Test.Sdk": {
             "target": "Package",
             "version": "[17.3.1, )"
@@ -8128,7 +8176,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.303\\RuntimeIdentifierGraph.json"
       }
     }
   }

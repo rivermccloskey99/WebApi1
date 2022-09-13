@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using WebApi1.Data;
 using WebApi1.Models;
 using Xunit;
+using FluentAssertions;
 
 namespace WebApi1.Tests
 {
@@ -34,8 +35,11 @@ namespace WebApi1.Tests
             var repo = new CustomerRepo(_context);
             Customer nullCustomer = null;
 
-            // Act & Assert
-            Assert.Throws<ArgumentNullException>(() => repo.CreateCustomer(nullCustomer));
+            // Act
+            Action act = () => repo.CreateCustomer(nullCustomer);
+
+            // Assert
+            act.Should().Throw<ArgumentNullException>();
         }
 
         [Fact]
@@ -54,18 +58,28 @@ namespace WebApi1.Tests
             repo.SaveChanges();
 
             // Assert
-            Assert.Equal(validCustomer, _context.Customers.LastOrDefault());
+            var actualCustomer = _context.Customers.LastOrDefault();
+            actualCustomer.Should().Be(validCustomer);
+
         }
 
         [Fact]
         public void Delete_an_existing_customer()
         {
             // Arrange
+            var repo = new CustomerRepo(_context);
+            var existingCustomer = new Customer()
+            {
+                Id = 1, FirstName = "River", LastName = "McCloskey", AccountNumber = 123, SortCode = "456-789", PostCode = "BT74 637", Balance = 6700000.43M
+            };
 
             // Act
+            repo.DeleteCustomerById(existingCustomer.Id);
+            repo.SaveChanges();
+            var customerCount = repo.GetAllCustomers().Count();
 
             // Assert
-
+            customerCount.Should().Be(1);
         }
 
         [Fact]
@@ -74,8 +88,11 @@ namespace WebApi1.Tests
             // Arrange
             var repo = new CustomerRepo(_context);
 
-            // Act & Assert
-            Assert.Throws<ArgumentNullException>(() => repo.DeleteCustomerById(0));
+            // Act
+            Action act = () => repo.DeleteCustomerById(0);
+
+            // Assert
+            act.Should().Throw<ArgumentNullException>();
         }
 
         [Fact]
@@ -88,7 +105,23 @@ namespace WebApi1.Tests
             var customerCount = repo.GetAllCustomers().Count();
 
             // Assert
-            Assert.Equal(2, customerCount);
+            customerCount.Should().Be(2);
+        }
+
+        [Fact]
+        public void Try_to_get_empty_list_of_customers_and_throw_an_exception()
+        {
+            // Arrange
+            var repo = new CustomerRepo(_context);
+
+            // Act
+            repo.DeleteCustomerById(1);
+            repo.DeleteCustomerById(2);
+            repo.SaveChanges();
+            Action act = () => repo.GetAllCustomers();
+
+            // Assert
+            act.Should().Throw<ArgumentNullException>();
         }
 
         [Fact]
@@ -99,25 +132,28 @@ namespace WebApi1.Tests
             var expectedCustomer = new Customer() { FirstName = "River", LastName = "McCloskey", AccountNumber = 123, SortCode = "456-789", PostCode = "BT74 637", Balance = 6700000.43M };
 
             // Act
-            var customer = repo.GetCustomerById(1);
+            var actualCustomer = repo.GetCustomerById(1);
 
             // Assert
-            Assert.Equal(expectedCustomer.FirstName, customer.FirstName);
-            Assert.Equal(expectedCustomer.LastName, customer.LastName);
-            Assert.Equal(expectedCustomer.AccountNumber, customer.AccountNumber);
-            Assert.Equal(expectedCustomer.SortCode, customer.SortCode);
-            Assert.Equal(expectedCustomer.PostCode, customer.PostCode);
-            Assert.Equal(expectedCustomer.Balance, customer.Balance);
+            actualCustomer.FirstName.Should().Be(expectedCustomer.FirstName);
+            actualCustomer.LastName.Should().Be(expectedCustomer.LastName);
+            actualCustomer.AccountNumber.Should().Be(expectedCustomer.AccountNumber);
+            actualCustomer.SortCode.Should().Be(expectedCustomer.SortCode);
+            actualCustomer.PostCode.Should().Be(expectedCustomer.PostCode);
+            actualCustomer.Balance.Should().Be(expectedCustomer.Balance);
         }
 
         [Fact]
         public void Get_a_customer_by_invalid_id_and_throw_an_exception()
         {
             // Arrange
+            var repo = new CustomerRepo(_context);
 
             // Act
+            Action act = () => repo.GetCustomerById(0);
 
             // Assert
+            act.Should().Throw<ArgumentNullException>();
 
         }
 
