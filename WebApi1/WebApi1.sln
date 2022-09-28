@@ -5,8 +5,7 @@ VisualStudioVersion = 17.1.32414.318
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi1", "WebApi1.csproj", "{D25EEFC1-CF41-4F2F-8CAD-25993363A312}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi1.Tests", "..\WebApi1.Tests\WebApi1.Tests.csproj", "{BA82D07A-31D8-4D80-8BC8-C3636D3AB8F5}"
-EndProject
+
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

@@ -190,3 +190,4 @@ C:\Projects\DPT\WebApi1\WebApi1\obj\Debug\net6.0\refint\WebApi1.dll
 C:\Projects\DPT\WebApi1\WebApi1\obj\Debug\net6.0\WebApi1.pdb
 C:\Projects\DPT\WebApi1\WebApi1\obj\Debug\net6.0\WebApi1.genruntimeconfig.cache
 C:\Projects\DPT\WebApi1\WebApi1\obj\Debug\net6.0\ref\WebApi1.dll
+C:\Users\rmccloskey004\source\repos\APIDemo\WebApi1\bin\Debug\net6.0\appsettings.Production.json

@@ -295,3 +295,5 @@ C:\Projects\DPT\WebApi1\WebApi1.Tests\obj\Debug\net6.0\ref\WebApi1.Tests.dll
 C:\Users\rmccloskey004\source\repos\APIDemo\WebApi1.Tests\bin\Debug\net6.0\Castle.Core.dll
 C:\Users\rmccloskey004\source\repos\APIDemo\WebApi1.Tests\bin\Debug\net6.0\Moq.dll
 C:\Projects\DPT\WebApi1\WebApi1.Tests\bin\Debug\net6.0\FluentAssertions.dll
+C:\Users\rmccloskey004\source\repos\APIDemo\WebApi1.Tests\bin\Debug\net6.0\FluentAssertions.dll
+C:\Users\rmccloskey004\source\repos\APIDemo\WebApi1.Tests\bin\Debug\net6.0\appsettings.Production.json

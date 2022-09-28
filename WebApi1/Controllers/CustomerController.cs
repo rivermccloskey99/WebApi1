@@ -1,6 +1,9 @@
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using WebApi1.Data;
+using WebApi1.Dtos;
 using WebApi1.Models;
+using WebApi1.SyncDataServices.Http;
 
 namespace WebApi1.Controllers
 {
@@ -9,29 +12,33 @@ namespace WebApi1.Controllers
     public class CustomerController : ControllerBase
     {
         private readonly ICustomerRepo _repository;
+        private readonly IMapper _mapper;
+        private readonly ICommandDataClient _commandDataClient;
 
-        public CustomerController(ICustomerRepo repository)
+        public CustomerController(ICustomerRepo repository, IMapper mapper, ICommandDataClient commandDataClient)
         {
             _repository = repository;
+            _mapper = mapper;
+            _commandDataClient = commandDataClient;
         }
-        
+
         [HttpGet]
-        public ActionResult<IEnumerable<Customer>> GetAllCustomers()
+        public ActionResult<IEnumerable<CustomerReadDto>> GetAllCustomers()
         {
             System.Console.WriteLine("--- Getting all customers");
 
             var customers = _repository.GetAllCustomers();
 
-            return Ok(customers);
+            return Ok(_mapper.Map<IEnumerable<CustomerReadDto>>(customers));
         }
 
         [HttpGet("{id}", Name = "GetCustomerById")]
-        public ActionResult<Customer> GetCustomerById(int id)
+        public ActionResult<CustomerReadDto> GetCustomerById(int id)
         {
             var customer = _repository.GetCustomerById(id);
-            if(customer != null)
+            if (customer != null)
             {
-                return Ok(customer);
+                return Ok(_mapper.Map<CustomerReadDto>(customer));
             }
             else
             {
@@ -40,30 +47,42 @@ namespace WebApi1.Controllers
         }
 
         [HttpPost]
-        public ActionResult<Customer> CreateCustomer(Customer customer)
+        public async Task<ActionResult<CustomerReadDto>> CreateCustomer(CustomerCreateDto customerCreateDto)
         {
+            var customer = _mapper.Map<Customer>(customerCreateDto);
             _repository.CreateCustomer(customer);
             _repository.SaveChanges();
 
-            return CreatedAtRoute(nameof(GetCustomerById), new { Id = customer.Id}, customer);
+            var customerReadDto = _mapper.Map<CustomerReadDto>(customer);
+
+            try
+            {
+                await _commandDataClient.SendCustomerToCommand(customerReadDto);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"-- Could not send POST request: {ex.Message}");
+            }
+
+            return CreatedAtRoute(nameof(GetCustomerById), new { Id = customer.Id }, customer);
         }
 
-        
+
         [HttpDelete("{id}")]
-        public ActionResult<Customer> DeleteAtId(int id)
+        public ActionResult<CustomerReadDto> DeleteAtId(int id)
         {
             var customer = _repository.GetCustomerById(id);
-            if(customer != null)
+            if (customer != null)
             {
                 _repository.DeleteCustomerById(id);
                 _repository.SaveChanges();
-                return Ok(customer);
+                return Ok(_mapper.Map<Customer>(customer));
             }
             else
             {
                 return NotFound();
             }
         }
-        
+
     }
 }

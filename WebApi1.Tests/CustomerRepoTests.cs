@@ -36,7 +36,7 @@ namespace WebApi1.Tests
             Customer nullCustomer = null;
 
             // Act
-            Action act = () => repo.CreateCustomer(nullCustomer);
+            var act = () => repo.CreateCustomer(nullCustomer);
 
             // Assert
             act.Should().Throw<ArgumentNullException>();
@@ -89,7 +89,7 @@ namespace WebApi1.Tests
             var repo = new CustomerRepo(_context);
 
             // Act
-            Action act = () => repo.DeleteCustomerById(0);
+            var act = () => repo.DeleteCustomerById(0);
 
             // Assert
             act.Should().Throw<ArgumentNullException>();
@@ -156,7 +156,6 @@ namespace WebApi1.Tests
             act.Should().Throw<ArgumentNullException>();
 
         }
-
 
         public void Dispose()
         {

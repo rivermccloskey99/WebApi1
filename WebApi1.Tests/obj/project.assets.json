@@ -8089,19 +8089,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\rmcgrath013\\.nuget\\packages\\": {}
+    "C:\\Users\\rmccloskey004\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Projects\\DPT\\WebApi1\\WebApi1.Tests\\WebApi1.Tests.csproj",
+      "projectUniqueName": "C:\\Users\\rmccloskey004\\source\\repos\\APIDemo\\WebApi1.Tests\\WebApi1.Tests.csproj",
       "projectName": "WebApi1.Tests",
-      "projectPath": "C:\\Projects\\DPT\\WebApi1\\WebApi1.Tests\\WebApi1.Tests.csproj",
-      "packagesPath": "C:\\Users\\rmcgrath013\\.nuget\\packages\\",
-      "outputPath": "C:\\Projects\\DPT\\WebApi1\\WebApi1.Tests\\obj\\",
+      "projectPath": "C:\\Users\\rmccloskey004\\source\\repos\\APIDemo\\WebApi1.Tests\\WebApi1.Tests.csproj",
+      "packagesPath": "C:\\Users\\rmccloskey004\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\rmccloskey004\\source\\repos\\APIDemo\\WebApi1.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\rmcgrath013\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\rmccloskey004\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -8109,15 +8109,14 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Projects\\DPT\\Local-NuGets": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Projects\\DPT\\WebApi1\\WebApi1\\WebApi1.csproj": {
-              "projectPath": "C:\\Projects\\DPT\\WebApi1\\WebApi1\\WebApi1.csproj"
+            "C:\\Users\\rmccloskey004\\source\\repos\\APIDemo\\WebApi1\\WebApi1.csproj": {
+              "projectPath": "C:\\Users\\rmccloskey004\\source\\repos\\APIDemo\\WebApi1\\WebApi1.csproj"
             }
           }
         }
@@ -8176,7 +8175,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.303\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }
